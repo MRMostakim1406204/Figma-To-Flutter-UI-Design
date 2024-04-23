@@ -1,3 +1,4 @@
+import 'package:figma_to_flutter_design_anik_vai/buttom_navigation.dart';
 import 'package:figma_to_flutter_design_anik_vai/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -75,10 +76,8 @@ class WelcomeScreen extends StatelessWidget {
                       color: Colors.purple,
                       minWidth: double.maxFinite,
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                        Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (context)=> BottomNavigationBarScreen()));
                       },
                       height: 48,
                       child: Container(

@@ -13,31 +13,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height / 3.5,
-            width: double.infinity,
-            color: Colors.purple,
-            child: Stack(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        toolbarHeight: kToolbarHeight*3,
+        title: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Image.asset("assets/images/image 223.png"),
                 Column(
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(top: 65, left: 12, right: 12),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CircleAvatar(
-                            maxRadius: 25,
-                            backgroundImage: AssetImage(
-                              "assets/images/image 223.png",
-                            ),
-                          ),
-                          Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "আমান নিটিংস মেডিকেল সেন্টার",
@@ -46,32 +32,26 @@ class _HomePageState extends State<HomePage> {
                                     fontWeight: FontWeight.w600,
                                     color: Colors.white),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(right: 85),
-                                child: Text(
-                                  "বাইপাইল, সাভার, ঢাকা",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w600,
-                                      color: Colors.white),
-                                ),
+                              Text(
+                                "বাইপাইল, সাভার, ঢাকা",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w600,
+                                    color: Colors.white),
                               ),
                             ],
                           ),
                           IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.notifications,
-                                color: Colors.white,
-                                size: 28,
-                              ))
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.notifications,
+                              color: Colors.white,
+                              size: 28,
+                            ))
+              ],
+            ),
+            SizedBox(height: 16,),
+            Container(
                       margin: EdgeInsets.only(left: 8, right: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
@@ -90,26 +70,28 @@ class _HomePageState extends State<HomePage> {
                             )),
                       ),
                     )
-                  ],
-                ),
-              ],
-            ),
-          ),
+          ],
+        ),
+      ),
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          
           _comodityEntry(context),
           SizedBox(
-            height: 12,
+            height: 8,
           ),
           _totalStock(context),
           SizedBox(
-            height: 12,
+            height: 8,
           ),
           _totalSupply(context),
           SizedBox(
-            height: 20,
+            height: 8,
           ),
           _medicalCentre(context),
           SizedBox(
-            height: 10,
+            height: 8,
           ),
           _doctorCall(context),
           SizedBox(
@@ -383,7 +365,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         SizedBox(
-          height: 12,
+          height: 5,
         ),
         Stack(
           children: [
